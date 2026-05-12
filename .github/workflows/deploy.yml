@@ -39,6 +39,7 @@ jobs:
           GATSBY_SITE_URL: ${{ vars.GATSBY_SITE_URL }}
           GATSBY_EMPRINT_REPO_URL: ${{ vars.GATSBY_EMPRINT_REPO_URL }}
           GATSBY_EMPRINT_RELEASE_BASE_URL: ${{ vars.GATSBY_EMPRINT_RELEASE_BASE_URL }}
+          GATSBY_ENABLE_RELEASE_LINKS: ${{ vars.GATSBY_ENABLE_RELEASE_LINKS }}
         run: npm run build
 
       - name: Upload artifact

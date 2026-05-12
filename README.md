@@ -14,12 +14,14 @@
 Update the repository and release URLs in [`src/data/site.js`](/Users/mhson/workspace/emprint-home/src/data/site.js) or provide them as environment variables:
 
 ```bash
-GATSBY_SITE_URL=https://<your-account>.github.io/emprint-home
-GATSBY_EMPRINT_REPO_URL=https://github.com/<your-account>/emprint
-GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/<your-account>/emprint/releases/download/v0.1.0
+GATSBY_SITE_URL=https://minhyeongson.github.io/emprint-home
+GATSBY_EMPRINT_REPO_URL=https://github.com/MinhyeongSon/emprint
+GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/MinhyeongSon/emprint/releases/download/v0.1.0
+GATSBY_ENABLE_RELEASE_LINKS=true
 ```
 
 If `GATSBY_EMPRINT_RELEASE_BASE_URL` is omitted, it falls back to `<repo>/releases/download/v0.1.0`.
+Release download buttons stay disabled until `GATSBY_ENABLE_RELEASE_LINKS=true` is set.
 
 ## Local development
 

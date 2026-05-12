@@ -1,12 +1,13 @@
 const currentVersion = '0.1.0'
-const githubRepoUrl = process.env.GATSBY_EMPRINT_REPO_URL || 'https://github.com/your-account/emprint'
-const siteUrl = process.env.GATSBY_SITE_URL || 'https://your-account.github.io/emprint-home'
+const githubRepoUrl = process.env.GATSBY_EMPRINT_REPO_URL || 'https://github.com/MinhyeongSon/emprint'
+const siteUrl = process.env.GATSBY_SITE_URL || 'https://minhyeongson.github.io/emprint-home'
 const releaseBaseUrl =
   process.env.GATSBY_EMPRINT_RELEASE_BASE_URL || `${githubRepoUrl}/releases/download/v${currentVersion}`
+const releaseLinksEnabled = process.env.GATSBY_ENABLE_RELEASE_LINKS === 'true'
 
 const isPlaceholderRepo = githubRepoUrl.includes('your-account')
 const isPlaceholderSiteUrl = siteUrl.includes('your-account')
-const isPlaceholderRelease = releaseBaseUrl.includes('your-account')
+const isPlaceholderRelease = !releaseLinksEnabled || releaseBaseUrl.includes('your-account')
 
 const downloads = [
   {
@@ -78,7 +79,7 @@ const docsSections = [
     summary: '현재 로컬 릴리스 폴더 기준으로 Emprint 0.1.0은 macOS Apple Silicon, macOS Intel, Windows x64 설치 파일이 준비되어 있습니다.',
     bullets: [
       '설치 버튼은 GitHub Releases 자산 URL을 기준으로 생성됩니다.',
-      '실제 배포 전에는 `src/data/site.js` 또는 `GATSBY_EMPRINT_RELEASE_BASE_URL` 값을 실제 릴리스 주소로 맞춰 주세요.',
+      '실제 배포 전에는 `GATSBY_EMPRINT_RELEASE_BASE_URL`과 `GATSBY_ENABLE_RELEASE_LINKS=true`를 함께 설정해 주세요.',
       'Git이 없는 환경에서는 앱의 가이드에 따라 먼저 Git 설치가 필요합니다.'
     ]
   },
@@ -129,5 +130,5 @@ export default {
   heroBadges: ['LOCAL-FIRST', 'GIT-NATIVE', 'GITHUB PAGES READY'],
   brandKeywords: ['Traces', 'Memory', 'Archives', 'Quiet intelligence'],
   notice:
-    '배포 전에 실제 GitHub 계정과 릴리스 주소로 URL을 연결해 주세요. 설정은 `src/data/site.js` 또는 GitHub Actions variables로 바꿀 수 있습니다.'
+    '현재는 저장소 링크만 연결되어 있고 설치 버튼은 닫혀 있습니다. 첫 GitHub Release가 준비되면 `GATSBY_EMPRINT_RELEASE_BASE_URL`과 `GATSBY_ENABLE_RELEASE_LINKS=true`를 설정해 주세요.'
 }
