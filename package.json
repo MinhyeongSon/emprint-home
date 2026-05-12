@@ -1,0 +1,22 @@
+{
+  "name": "emprint-home",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub Pages landing site for Emprint.",
+  "packageManager": "npm@11.12.1",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "gatsby": "^5.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
