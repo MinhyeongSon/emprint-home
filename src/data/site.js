@@ -3,11 +3,10 @@ const githubRepoUrl = process.env.GATSBY_EMPRINT_REPO_URL || 'https://github.com
 const siteUrl = process.env.GATSBY_SITE_URL || 'https://minhyeongson.github.io/emprint-home'
 const releaseBaseUrl =
   process.env.GATSBY_EMPRINT_RELEASE_BASE_URL || `${githubRepoUrl}/releases/download/v${currentVersion}`
-const releaseLinksEnabled = process.env.GATSBY_ENABLE_RELEASE_LINKS === 'true'
 
 const isPlaceholderRepo = githubRepoUrl.includes('your-account')
 const isPlaceholderSiteUrl = siteUrl.includes('your-account')
-const isPlaceholderRelease = !releaseLinksEnabled || releaseBaseUrl.includes('your-account')
+const isPlaceholderRelease = releaseBaseUrl.includes('your-account')
 
 const downloads = [
   {
@@ -76,10 +75,10 @@ const workflow = [
 const docsSections = [
   {
     title: '설치',
-    summary: '현재 로컬 릴리스 폴더 기준으로 Emprint 0.1.0은 macOS Apple Silicon, macOS Intel, Windows x64 설치 파일이 준비되어 있습니다.',
+    summary: 'Emprint 0.1.0은 macOS Apple Silicon, macOS Intel, Windows x64 설치 파일이 GitHub Releases에서 제공됩니다.',
     bullets: [
-      '설치 버튼은 GitHub Releases 자산 URL을 기준으로 생성됩니다.',
-      '실제 배포 전에는 `GATSBY_EMPRINT_RELEASE_BASE_URL`과 `GATSBY_ENABLE_RELEASE_LINKS=true`를 함께 설정해 주세요.',
+      '설치 버튼을 클릭하면 GitHub Releases에서 직접 인스톨러를 다운로드할 수 있습니다.',
+      'macOS는 .dmg 파일을 열어 Applications에 드래그, Windows는 Setup .exe를 실행해 설치합니다.',
       'Git이 없는 환경에서는 앱의 가이드에 따라 먼저 Git 설치가 필요합니다.'
     ]
   },
@@ -130,5 +129,5 @@ export default {
   heroBadges: ['LOCAL-FIRST', 'GIT-NATIVE', 'GITHUB PAGES READY'],
   brandKeywords: ['Traces', 'Memory', 'Archives', 'Quiet intelligence'],
   notice:
-    '현재는 저장소 링크만 연결되어 있고 설치 버튼은 닫혀 있습니다. 첫 GitHub Release가 준비되면 `GATSBY_EMPRINT_RELEASE_BASE_URL`과 `GATSBY_ENABLE_RELEASE_LINKS=true`를 설정해 주세요.'
+    'GitHub Release가 준비되지 않은 환경입니다. `GATSBY_EMPRINT_REPO_URL`을 올바른 저장소 주소로 설정해 주세요.'
 }
