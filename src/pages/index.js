@@ -1,136 +1,188 @@
 import * as React from 'react'
 import { Link, withPrefix } from 'gatsby'
+import { hrefWithPrefix } from '../utils/href-with-prefix'
 import DownloadGrid from '../components/download-grid'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import siteData from '../data/site'
+import { useLocale } from '../context/locale-context'
+import { DEFAULT_LOCALE, getMessages } from '../content/copy'
 
 export default function IndexPage({ location }) {
   const logoSrc = withPrefix('/assets/images/emprint-logo.svg')
+  const { messages } = useLocale()
+  const L = messages.landing
 
   return (
     <Layout currentPath={location.pathname}>
-      <section className="hero">
-        <div className="hero__copy">
-          <div className="hero-mark" aria-hidden="true">
-            <span className="hero-mark__prompt">&gt;</span>
-            <span className="hero-mark__cursor">_</span>
-          </div>
-          <div className="badge-row">
-            {siteData.heroBadges.map((badge) => (
-              <span className="pill" key={badge}>
-                {badge}
-              </span>
-            ))}
-          </div>
-          <h1>Emprint keeps your writing, code, and publishing trail in one warm workspace.</h1>
-          <p className="hero__lede">
-            Emprint는 local-first, Git-native 철학 위에 놓인 데스크톱 워크스페이스입니다. Markdown과 Git을
-            그대로 유지한 채 글을 쓰고, 코드를 수정하고, GitHub Pages까지 이어지는 흐름을 정리합니다.
-          </p>
-          <div className="button-row">
-            <a className="button" href="#downloads">
-              Install Emprint
-            </a>
-            <Link className="button button--secondary" to="/document/">
-              Open Document
-            </Link>
-            <a
-              className="button button--ghost"
-              href={siteData.githubRepoUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              View GitHub
-            </a>
-          </div>
-          <p className="hero__meta">
-            Current release reference: <strong>{siteData.currentVersion}</strong>
-          </p>
-        </div>
-
-        <div className="hero__panel panel">
-          <img className="hero__logo" src={logoSrc} alt="Emprint wordmark" />
-          <p className="hero__quote">“This workspace preserves the evolution of my thinking.”</p>
-          <div className="console-card">
-            <div className="console-card__header">
-              <span>workspace structure</span>
-              <span>portable by design</span>
+      <div className="page-narrative">
+        <section className="hero hero--editorial">
+          <div className="hero__copy">
+            <div className="hero-mark" aria-hidden="true">
+              <span className="hero-mark__prompt">&gt;</span>
+              <span className="hero-mark__cursor">_</span>
             </div>
-            <pre>{siteData.directoryTree.join('\n')}</pre>
-          </div>
-          <div className="keyword-row">
-            {siteData.brandKeywords.map((keyword) => (
-              <span className="keyword" key={keyword}>
-                {keyword}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-block">
-        <div className="section-heading">
-          <span className="section-heading__eyebrow">Why Emprint</span>
-          <h2>Quiet intelligence for portable creative work.</h2>
-          <p>
-            `emprint` 프로젝트의 README, 디자인 문서, 워크플로 설명을 바탕으로 이 소개 페이지를 구성했습니다.
-            톤은 warm 테마를 유지하면서도 설치와 배포 동선을 한 화면 안에서 빠르게 파악할 수 있게 정리했습니다.
-          </p>
-        </div>
-        <div className="feature-grid">
-          {siteData.principles.map((item) => (
-            <article className="panel feature-card" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <DownloadGrid />
-
-      <section className="section-block">
-        <div className="section-heading">
-          <span className="section-heading__eyebrow">Workflow</span>
-          <h2>Install, connect, write, publish.</h2>
-        </div>
-        <div className="workflow-grid">
-          {siteData.workflow.map((item) => (
-            <article className="panel workflow-card" key={item.step}>
-              <div className="workflow-card__step">{item.step}</div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-block section-block--narrow">
-        <div className="panel repo-card">
-          <div>
-            <span className="section-heading__eyebrow">Repository</span>
-            <h2>Follow the app project itself.</h2>
-            <p>
-              Emprint의 실제 앱 저장소 링크는 상단 `GitHub` 메뉴와 아래 버튼에서 연결됩니다. 아직 placeholder URL이
-              들어가 있다면 `src/data/site.js`에서 실제 주소로 바꿔 주세요.
+            <p className="hero__epigraph">{L.hero.epigraph}</p>
+            <h1>{L.hero.title}</h1>
+            <p className="hero__lede">{L.hero.lede}</p>
+            <p className="hero__ribbon" role="presentation">
+              {L.hero.ribbon}
+            </p>
+            <div className="button-row button-row--tight">
+              <a className="button" href="#downloads">
+                {L.closing.primaryCta}
+              </a>
+              <Link className="button button--secondary" to="/document/">
+                {L.closing.secondaryCta}
+              </Link>
+              <a
+                className="button button--ghost"
+                href={siteData.githubRepoUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {L.closing.tertiaryCta}
+              </a>
+            </div>
+            <p className="hero__meta">
+              {L.hero.releaseLabel} <span className="hero__meta-sep">·</span>{' '}
+              <strong>{siteData.currentVersion}</strong>
             </p>
           </div>
-          <a className="button" href={siteData.githubRepoUrl} target="_blank" rel="noreferrer">
-            Open repository
-          </a>
-        </div>
-      </section>
+
+          <div className="hero__panel panel">
+            <img className="hero__logo" src={logoSrc} alt={L.hero.logoAlt} />
+            <p className="hero__quote">{L.hero.quote}</p>
+            <div className="console-card">
+              <div className="console-card__header">
+                <span>{L.hero.panelLeft}</span>
+                <span>{L.hero.panelRight}</span>
+              </div>
+              <pre>{siteData.directoryTree.join('\n')}</pre>
+            </div>
+          </div>
+        </section>
+
+        <section className="explore-section" id="features">
+          <div className="explore-section__header">
+            <span className="section-heading__eyebrow">{L.features.eyebrow}</span>
+            <h2 className="explore-section__title">{L.features.title}</h2>
+            <p className="explore-section__intro">{L.features.intro}</p>
+          </div>
+          <div className="feature-grid explore-section__grid">
+            {L.features.items.map((item) => (
+              <article className="panel feature-card" key={item.id}>
+                <h3>{item.title}</h3>
+                <p>{item.summary}</p>
+                <a className="feature-card__link" href={hrefWithPrefix(item.linkTo)}>
+                  {item.linkLabel}
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <div className="section-rule" aria-hidden="true" />
+
+        <section className="editorial-section editorial-section--center">
+          <span className="section-heading__eyebrow">{L.why.eyebrow}</span>
+          <h2 className="editorial-section__title">{L.why.title}</h2>
+          <div className="editorial-section__prose">
+            {L.why.paragraphs.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+        </section>
+
+        <section className="split-section panel">
+          <div className="split-section__text">
+            <span className="section-heading__eyebrow">{L.commit.eyebrow}</span>
+            <h2 className="editorial-section__title editorial-section__title--tight">{L.commit.title}</h2>
+            <p className="split-section__body">{L.commit.body}</p>
+          </div>
+          <div className="split-section__aside">
+            <div className="console-card console-card--tight">
+              <div className="console-card__header">
+                <span>{L.commit.panelLeft}</span>
+                <span>{L.commit.panelRight}</span>
+              </div>
+              <pre>{L.commit.logLines.join('\n')}</pre>
+            </div>
+          </div>
+        </section>
+
+        <section className="editorial-section" id="anthologies">
+          <div className="editorial-section__header">
+            <span className="section-heading__eyebrow">{L.anthologies.eyebrow}</span>
+            <h2 className="editorial-section__title editorial-section__title--tight">{L.anthologies.title}</h2>
+            <p className="editorial-section__intro">{L.anthologies.intro}</p>
+          </div>
+          <div className="anthology-shelf">
+            {L.anthologies.items.map((item) => (
+              <article className="anthology-card" key={item.id}>
+                <div className="anthology-card__label">{item.name}</div>
+                <div className="anthology-card__mood">{item.mood}</div>
+                <p className="anthology-card__text">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="duo-panels">
+          <article className="panel duo-panels__card">
+            <span className="section-heading__eyebrow">{L.fragments.eyebrow}</span>
+            <h2 className="editorial-section__title editorial-section__title--tight">{L.fragments.title}</h2>
+            <p className="duo-panels__body">{L.fragments.body}</p>
+          </article>
+          <article className="panel duo-panels__card">
+            <span className="section-heading__eyebrow">{L.blank.eyebrow}</span>
+            <h2 className="editorial-section__title editorial-section__title--tight">{L.blank.title}</h2>
+            <p className="duo-panels__body">{L.blank.body}</p>
+          </article>
+        </section>
+
+        <section className="editorial-section editorial-section--center editorial-section--tight">
+          <span className="section-heading__eyebrow">{L.quiet.eyebrow}</span>
+          <h2 className="editorial-section__title editorial-section__title--tight">{L.quiet.title}</h2>
+          <p className="editorial-section__intro">{L.quiet.intro}</p>
+          <ul className="quiet-list">
+            {L.quiet.values.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
+        </section>
+
+        <div className="section-rule" aria-hidden="true" />
+
+        <DownloadGrid />
+
+        <section className="editorial-section editorial-section--center closing-band">
+          <span className="section-heading__eyebrow">{L.closing.eyebrow}</span>
+          <h2 className="editorial-section__title editorial-section__title--tight">{L.closing.title}</h2>
+          <p className="editorial-section__intro closing-band__body">{L.closing.body}</p>
+          <div className="button-row button-row--tight closing-band__actions">
+            <a className="button" href="#downloads">
+              {L.closing.primaryCta}
+            </a>
+            <Link className="button button--secondary" to="/document/">
+              {L.closing.secondaryCta}
+            </Link>
+          </div>
+        </section>
+      </div>
     </Layout>
   )
 }
 
 export function Head() {
+  const m = getMessages(DEFAULT_LOCALE)
+  const seo = m.seo.home
   return (
     <Seo
-      title="Main"
-      description="Emprint landing page with install links, workflow overview, and GitHub Pages-ready onboarding."
+      title={seo.pageTitle}
+      description={seo.description}
       pathname="/"
+      lang={DEFAULT_LOCALE === 'ko' ? 'ko' : 'en'}
     />
   )
 }

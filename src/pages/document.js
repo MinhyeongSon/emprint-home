@@ -2,60 +2,74 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import DownloadGrid from '../components/download-grid'
 import Seo from '../components/seo'
-import siteData from '../data/site'
+import { useLocale } from '../context/locale-context'
+import { DEFAULT_LOCALE, getMessages } from '../content/copy'
 
 export default function DocumentPage({ location }) {
+  const { messages } = useLocale()
+  const doc = messages.documentPage
+
   return (
     <Layout currentPath={location.pathname}>
-      <section className="section-block section-block--tight">
-        <div className="section-heading">
-          <span className="section-heading__eyebrow">Document</span>
-          <h1>Emprint 사용 흐름</h1>
-          <p>
-            이 페이지는 현재 `emprint` 앱의 README, proposal, agent brief, GitHub Pages 로드맵을 기반으로
-            초기 사용 흐름을 정리한 문서입니다.
-          </p>
+      <div className="docs-page">
+        <aside className="docs-sidebar">
+          <nav className="docs-nav" aria-label={doc.sidebarAriaLabel}>
+            <div className="docs-nav__title">{doc.sidebarTitle}</div>
+            <a className="docs-nav__link" href="#overview">
+              {doc.navOverview}
+            </a>
+            {doc.sections.map((section) => (
+              <a className="docs-nav__link" key={section.id} href={`#${section.id}`}>
+                {section.navLabel ?? section.title}
+              </a>
+            ))}
+            <a className="docs-nav__link" href="#notes">
+              {doc.navNotes}
+            </a>
+          </nav>
+        </aside>
+
+        <div className="docs-main">
+          <header id="overview" className="docs-hero panel">
+            <span className="section-heading__eyebrow">{doc.eyebrow}</span>
+            <h1>{doc.title}</h1>
+            <p>{doc.intro}</p>
+            <DownloadGrid compact />
+          </header>
+
+          {doc.sections.map((section) => (
+            <article key={section.id} id={section.id} className="docs-section panel">
+              <h2>{section.title}</h2>
+              <p className="docs-section__lead">{section.summary}</p>
+              <p className="docs-section__body">{section.body}</p>
+              <ul className="document-list">
+                {section.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+
+          <footer id="notes" className="docs-section docs-section--notes panel">
+            <span className="section-heading__eyebrow">{doc.notesEyebrow}</span>
+            <h2>{doc.notesTitle}</h2>
+            <p>{doc.notesBody}</p>
+          </footer>
         </div>
-      </section>
-
-      <DownloadGrid compact title="Installer Matrix" />
-
-      <section className="document-grid">
-        {siteData.docsSections.map((section, index) => (
-          <article className="panel document-card" key={section.title}>
-            <div className="document-card__index">{String(index + 1).padStart(2, '0')}</div>
-            <h2>{section.title}</h2>
-            <p>{section.summary}</p>
-            <ul className="document-list">
-              {section.bullets.map((bullet) => (
-                <li key={bullet}>{bullet}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </section>
-
-      <section className="section-block section-block--narrow">
-        <div className="panel notes-card">
-          <span className="section-heading__eyebrow">Notes</span>
-          <h2>릴리스와 저장소 연결</h2>
-          <p>
-            이 사이트는 `emprint-home` 저장소에서 GitHub Pages로 배포되지만, 설치 버튼은 `emprint` 앱 저장소의
-            Releases를 가리키도록 설계했습니다. 저장소 이름이나 릴리스 태그가 바뀌면 `src/data/site.js` 또는
-            Actions variables도 함께 수정해 주세요.
-          </p>
-        </div>
-      </section>
+      </div>
     </Layout>
   )
 }
 
 export function Head() {
+  const m = getMessages(DEFAULT_LOCALE)
+  const seo = m.seo.document
   return (
     <Seo
-      title="Document"
-      description="Usage notes, install guidance, and publishing flow for the Emprint desktop app."
+      title={seo.pageTitle}
+      description={seo.description}
       pathname="/document/"
+      lang={DEFAULT_LOCALE === 'ko' ? 'ko' : 'en'}
     />
   )
 }

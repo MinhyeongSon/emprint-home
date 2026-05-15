@@ -7,16 +7,17 @@ function toAbsoluteUrl(pathname) {
   return new URL(pathname.replace(/^\/+/, ''), baseUrl).toString()
 }
 
-export default function Seo({ title, description, pathname = '/' }) {
+export default function Seo({ title, description, pathname = '/', lang = 'ko' }) {
   const pageTitle = title ? `${title} | Emprint` : 'Emprint'
   const pageDescription =
-    description || 'Local-first, Git-native workspace runtime for creators, developers, and AI-native workflows.'
+    description ||
+    'Emprint is a calm personal archive and publishing platform: local files, Git-shaped history, and anthologies instead of feeds.'
   const imageUrl = toAbsoluteUrl('assets/images/icon-512.png')
   const canonicalUrl = toAbsoluteUrl(pathname)
 
   return (
     <>
-      <html lang="ko" />
+      <html lang={lang} />
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <meta name="theme-color" content="#cd7b00" />
