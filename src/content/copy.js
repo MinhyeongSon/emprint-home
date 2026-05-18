@@ -216,7 +216,7 @@ const messages = {
       eyebrow: 'Document',
       title: 'Emprint—start from the beginning, step by step',
       intro:
-        'No coding background is needed. Go in order: install the app, choose a folder on your computer for your work, learn to write, then—only when you want—connect to the internet. Use the left-hand list to jump to any section.',
+        'No coding background is needed. Go in order: install the app, install Node.js so preview and other tools work, choose a folder on your computer for your work, learn to write, then—only when you want—connect to the internet. Use the left-hand list to jump to any section.',
       sidebarTitle: 'On this page',
       sidebarAriaLabel: 'Documentation',
       navOverview: 'Getting started',
@@ -241,6 +241,22 @@ const messages = {
           ]
         },
         {
+          id: 'nodejs',
+          navLabel: 'Node.js',
+          title: 'Install Node.js (required for full features)',
+          summary:
+            'Without Node.js on your computer, Emprint cannot use npm—and features such as live preview will not work. Install Node.js before you rely on preview or other build tools.',
+          body:
+            'Emprint runs Node.js and npm in the background for preview, local site builds, and similar tasks. You can open the app without Node.js, but you will not get the full experience until it is installed.',
+          bullets: [
+            'Download the current LTS installer for your system from https://nodejs.org (Mac or Windows), run it, and accept the defaults.',
+            'Node.js includes npm; Emprint needs both. If the installer offers “Add to PATH”, keep that enabled.',
+            'When finished, fully quit Emprint and open it again so it can detect Node.js.',
+            'Optional check: open Terminal (Mac) or Command Prompt (Windows) and run `node -v` and `npm -v`—each should print a version number.',
+            'If preview still says npm or Node is missing, reinstall Node.js or restart your computer, then try again.'
+          ]
+        },
+        {
           id: 'firstRun',
           navLabel: 'First steps',
           title: 'First launch: your folder and your account',
@@ -262,9 +278,10 @@ const messages = {
           summary:
             'The app is organized into a few areas. They may look technical, but they map to simple ideas: finished writing, work-in-progress, and (optional) the appearance of your site.',
           body:
-            'Posts is for writing you consider ready to share. Drafts is for ideas still taking shape. Settings holds account and project choices. If you later want finer control over layout or colors, the Implement area opens the deeper site files—you can ignore it until you need it.',
+            'Posts is for writing you consider ready to share. Drafts is for ideas still taking shape. Settings holds account and project choices. If you later want finer control over layout or colors, the Implement area opens the deeper site files—you can ignore it until you need it. Live preview needs Node.js and npm—see the Node.js section if preview is unavailable.',
           bullets: [
             'Open Drafts or Posts and start typing. Optional lines at the top can carry a title or date; the app can help you fill them in.',
+            'Use preview to see how your writing will look on the web. If it does not start, confirm Node.js is installed (Document → Node.js) and restart Emprint.',
             'Move work from draft toward “ready” using the actions inside Emprint when you feel finished.',
             'Use Implement only when you want to adjust site structure or styling beyond the basics.',
             'Assets is reserved for pictures and other media as that part of the app grows.'
@@ -500,7 +517,7 @@ const messages = {
       eyebrow: '문서',
       title: 'Emprint, 처음부터 따라하기',
       intro:
-        '개발 경험이 없어도 괜찮습니다. 아래 순서대로만 진행해 보세요: 앱 설치 → 내 컴퓨터에 둘 작업 폴더 정하기 → 글쓰기 익히기 → (원할 때) 인터넷에 연결하기. 왼쪽 목차에서 원하는 부분으로 이동할 수 있습니다.',
+        '개발 경험이 없어도 괜찮습니다. 아래 순서대로만 진행해 보세요: 앱 설치 → Node.js 설치(미리보기 등 전체 기능) → 내 컴퓨터에 둘 작업 폴더 정하기 → 글쓰기 익히기 → (원할 때) 인터넷에 연결하기. 왼쪽 목차에서 원하는 부분으로 이동할 수 있습니다.',
       sidebarTitle: '목차',
       sidebarAriaLabel: '문서 섹션',
       navOverview: '시작하기',
@@ -525,6 +542,22 @@ const messages = {
           ]
         },
         {
+          id: 'nodejs',
+          navLabel: 'Node.js',
+          title: 'Node.js 설치하기 (전체 기능에 필요)',
+          summary:
+            '컴퓨터에 Node.js가 없으면 Emprint는 npm을 쓸 수 없고, 미리보기 같은 기능이 동작하지 않습니다. 미리보기나 빌드 도구를 쓰기 전에 Node.js를 먼저 설치하세요.',
+          body:
+            'Emprint는 미리보기, 로컬 사이트 빌드 등을 위해 백그라운드에서 Node.js와 npm을 사용합니다. Node.js 없이도 앱은 열리지만, 설치하기 전까지는 Emprint의 모든 기능을 사용할 수 없습니다.',
+          bullets: [
+            'https://nodejs.org 에서 내 OS에 맞는 LTS 설치 파일을 받아 실행하고, 기본 옵션으로 설치합니다.',
+            'Node.js에는 npm이 함께 포함됩니다. 설치 화면에 “PATH에 추가” 같은 항목이 있으면 켜 둡니다.',
+            '설치가 끝나면 Emprint를 완전히 종료한 뒤 다시 실행해 Node.js를 인식하게 합니다.',
+            '확인(선택): 터미널(맥) 또는 명령 프롬프트(Windows)에서 `node -v`, `npm -v`를 실행해 버전 번호가 나오는지 봅니다.',
+            '미리보기에서 여전히 npm 또는 Node가 없다고 나오면 Node.js를 다시 설치하거나 PC를 재시작한 뒤 Emprint를 다시 열어 보세요.'
+          ]
+        },
+        {
           id: 'firstRun',
           navLabel: '첫 설정',
           title: '첫 실행: 작업 폴더와 계정',
@@ -546,9 +579,10 @@ const messages = {
           summary:
             '앱에는 이름이 조금 생소한 영역이 있지만, 뜻은 단순합니다. 남길 글, 아직 다듬는 중인 글, 그리고 (원하면) 사이트 모양을 바꾸는 곳입니다.',
           body:
-            'Posts는 “남겨도 괜찮은 글”을, Drafts는 “아직 만드는 중인 글”을 두기 좋습니다. 설정은 계정·프로젝트 선택 등에 씁니다. 레이아웃·색 등을 더 세밀하게 바꾸고 싶을 때만 Implement 영역을 열어도 됩니다. 처음에는 Drafts나 Posts만 써도 충분합니다.',
+            'Posts는 “남겨도 괜찮은 글”을, Drafts는 “아직 만드는 중인 글”을 두기 좋습니다. 설정은 계정·프로젝트 선택 등에 씁니다. 레이아웃·색 등을 더 세밀하게 바꾸고 싶을 때만 Implement 영역을 열어도 됩니다. 처음에는 Drafts나 Posts만 써도 충분합니다. 웹 미리보기는 Node.js와 npm이 필요합니다—미리보기가 안 되면 문서의 Node.js 섹션을 확인하세요.',
           bullets: [
             'Drafts나 Posts를 열고 평소처럼 타이핑합니다. 맨 위에 제목·날짜 같은 줄을 둘 수 있는데, 없어도 되고 앱이 도와줄 수도 있습니다.',
+            '미리보기로 글이 웹에서 어떻게 보일지 확인합니다. 실행되지 않으면 Node.js 설치 여부(문서 → Node.js)를 확인하고 Emprint를 다시 실행합니다.',
             '초안이 마음에 들면 앱 안의 안내에 따라 Posts 쪽으로 옮기거나 “완성에 가깝다”고 표시해 둡니다.',
             '사이트 모양을 더 손보고 싶을 때만 Implement를 사용합니다. 처음에는 건너뛰어도 됩니다.',
             'Assets는 사진 등 미디어를 모아 둘 자리로, 앱이 자라면서 채워질 예정입니다.'
