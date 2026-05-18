@@ -16,7 +16,7 @@ Update the repository and release URLs in [`src/data/site.js`](/Users/mhson/work
 ```bash
 GATSBY_SITE_URL=https://minhyeongson.github.io/emprint-home
 GATSBY_EMPRINT_REPO_URL=https://github.com/MinhyeongSon/emprint
-GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/MinhyeongSon/emprint/releases/download/v0.2.2
+GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/MinhyeongSon/emprint/releases/download/v0.2.3
 GATSBY_ENABLE_RELEASE_LINKS=true
 ```
 
