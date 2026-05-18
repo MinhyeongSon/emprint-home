@@ -1,5 +1,5 @@
 /** Technical site config (URLs, versions, download filenames). All UI copy: `src/content/copy.js`. */
-const currentVersion = '0.1.0'
+const currentVersion = '0.2.0'
 const githubRepoUrl = process.env.GATSBY_EMPRINT_REPO_URL || 'https://github.com/MinhyeongSon/emprint'
 const siteUrl = process.env.GATSBY_SITE_URL || 'https://minhyeongson.github.io/emprint-home'
 const releaseBaseUrl =
