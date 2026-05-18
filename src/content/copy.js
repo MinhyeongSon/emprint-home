@@ -216,7 +216,7 @@ const messages = {
       eyebrow: 'Document',
       title: 'Emprint—start from the beginning, step by step',
       intro:
-        'No coding background is needed. Go in order: install the app, install Node.js so preview and other tools work, choose a folder on your computer for your work, learn to write, then—only when you want—connect to the internet. Use the left-hand list to jump to any section.',
+        'No coding background is needed. Go in order: install the app, install Node.js and Git so preview and sync work, choose a folder on your computer for your work, learn to write, then—only when you want—connect to the internet. Use the left-hand list to jump to any section.',
       sidebarTitle: 'On this page',
       sidebarAriaLabel: 'Documentation',
       navOverview: 'Getting started',
@@ -257,13 +257,29 @@ const messages = {
           ]
         },
         {
+          id: 'git',
+          navLabel: 'Git',
+          title: 'Install Git (required for sync and publishing)',
+          summary:
+            'Emprint uses Git to track your writing and talk to GitHub. Without Git installed, backup, sync, and publish steps will fail even if you have a GitHub account.',
+          body:
+            'Git is separate from the Emprint app and from Node.js. Install it once on your computer before you link GitHub or send your work online. Many Macs already include Git after you install Apple’s command-line tools; if not, use the installer below.',
+          bullets: [
+            'Download Git from https://git-scm.com/downloads and run the installer for Mac or Windows (default options are fine).',
+            'On Mac, if the installer is not needed, open Terminal once—macOS may offer to install “command line developer tools”; accept if prompted.',
+            'After installing, quit and reopen Emprint so it can find Git.',
+            'Optional check: in Terminal or Command Prompt, run `git --version`—you should see a version number.',
+            'When you connect GitHub later, Git works together with your login; install Git before that step (see First steps).'
+          ]
+        },
+        {
           id: 'firstRun',
           navLabel: 'First steps',
           title: 'First launch: your folder and your account',
           summary:
             'The first time you open Emprint, you choose a folder on your computer where your writing and images will be kept.',
           body:
-            'Treat that folder as your personal project drawer. Everything stays on your machine until you decide to connect the internet. When you are ready to sync or publish, the app will walk you through signing in to GitHub (a free service many creative tools use). Until then, you can write and save locally with no account.',
+            'Treat that folder as your personal project drawer. Everything stays on your machine until you decide to connect the internet. When you are ready to sync or publish, the app will walk you through signing in to GitHub (a free service many creative tools use). Install Git first (Document → Git)—linking and upload steps need it. Until then, you can write and save locally with no account.',
           bullets: [
             'If you do not have a GitHub account yet, you can create one for free at github.com whenever the app asks—or a little before, if you prefer.',
             'When Emprint shows a short code and a web address, open your browser, go to that address, type the code, and approve the sign-in. This safely links the app to your account.',
@@ -294,9 +310,9 @@ const messages = {
           summary:
             'A coming goal is to help you turn your saved folder into a simple public website. Today, focus on writing locally; Emprint will add clearer “go live” steps as releases mature.',
           body:
-            '“Publishing” will mean: save your latest writing in the app, then send a copy to your linked online project so visitors can open a web link. Until you connect an account, everything stays private on your computer.',
+            '“Publishing” will mean: save your latest writing in the app, then send a copy to your linked online project so visitors can open a web link. Until you connect an account, everything stays private on your computer. Git must already be installed (Document → Git) before publish or sync will work.',
           bullets: [
-            'When the in-app checklist mentions linking an account, follow those screens after you have a GitHub login.',
+            'When the in-app checklist mentions linking an account, follow those screens after you have a GitHub login and Git is installed.',
             'When your version offers a “send changes” or publish action, use it, then open the web address Emprint shows to check the result.',
             'The website you are reading now only explains the program; your own writing and site will live at the addresses Emprint gives you.'
           ]
@@ -517,7 +533,7 @@ const messages = {
       eyebrow: '문서',
       title: 'Emprint, 처음부터 따라하기',
       intro:
-        '개발 경험이 없어도 괜찮습니다. 아래 순서대로만 진행해 보세요: 앱 설치 → Node.js 설치(미리보기 등 전체 기능) → 내 컴퓨터에 둘 작업 폴더 정하기 → 글쓰기 익히기 → (원할 때) 인터넷에 연결하기. 왼쪽 목차에서 원하는 부분으로 이동할 수 있습니다.',
+        '개발 경험이 없어도 괜찮습니다. 아래 순서대로만 진행해 보세요: 앱 설치 → Node.js·Git 설치(미리보기·동기화 등) → 내 컴퓨터에 둘 작업 폴더 정하기 → 글쓰기 익히기 → (원할 때) 인터넷에 연결하기. 왼쪽 목차에서 원하는 부분으로 이동할 수 있습니다.',
       sidebarTitle: '목차',
       sidebarAriaLabel: '문서 섹션',
       navOverview: '시작하기',
@@ -558,13 +574,29 @@ const messages = {
           ]
         },
         {
+          id: 'git',
+          navLabel: 'Git',
+          title: 'Git 설치하기 (동기화·게시에 필요)',
+          summary:
+            'Emprint는 글의 기록과 GitHub 연동에 Git을 사용합니다. Git이 없으면 GitHub 계정이 있어도 백업, 동기화, 게시 단계가 실패할 수 있습니다.',
+          body:
+            'Git은 Emprint 앱이나 Node.js와 별개 프로그램입니다. GitHub에 연결하거나 글을 올리기 전에 PC에 한 번 설치해 두세요. 맥은 “명령줄 개발자 도구” 설치 후 Git이 이미 있을 수도 있습니다. 없으면 아래 설치 파일을 사용합니다.',
+          bullets: [
+            'https://git-scm.com/downloads 에서 맥 또는 Windows용 설치 파일을 받아 실행합니다(기본 옵션으로 설치).',
+            '맥에서 설치 파일이 필요 없다면, 터미널을 한 번 열어 “명령줄 개발자 도구” 설치 안내가 나오면 설치합니다.',
+            '설치 후 Emprint를 완전히 종료했다가 다시 실행해 Git을 인식하게 합니다.',
+            '확인(선택): 터미널 또는 명령 프롬프트에서 `git --version`을 실행해 버전 번호가 나오는지 봅니다.',
+            '나중에 GitHub를 연결할 때 Git이 함께 쓰입니다. 첫 설정 전에 Git 설치를 마쳐 두세요(문서 → Git).'
+          ]
+        },
+        {
           id: 'firstRun',
           navLabel: '첫 설정',
           title: '첫 실행: 작업 폴더와 계정',
           summary:
             'Emprint를 처음 열면, 글과 이미지를 모아 둘 컴퓨터 안의 폴더를 고르게 됩니다.',
           body:
-            '이 폴더는 나만의 “작업 서랍”이라고 생각하면 됩니다. 인터넷에 연결하지 않아도 여기에 쓴 내용은 내 컴퓨터에 그대로 남습니다. 나중에 백업이나 웹에 올리기를 원하면, 앱이 안내하는 대로 GitHub(무료로 가입할 수 있는 프로젝트 보관 서비스)에 로그인하면 됩니다. 그 전까지는 계정 없이 로컬에서만 작업해도 됩니다.',
+            '이 폴더는 나만의 “작업 서랍”이라고 생각하면 됩니다. 인터넷에 연결하지 않아도 여기에 쓴 내용은 내 컴퓨터에 그대로 남습니다. 나중에 백업이나 웹에 올리기를 원하면, 앱이 안내하는 대로 GitHub(무료로 가입할 수 있는 프로젝트 보관 서비스)에 로그인하면 됩니다. 그 전에 Git을 설치해 두세요(문서 → Git)—연결·업로드에 필요합니다. 그 전까지는 계정 없이 로컬에서만 작업해도 됩니다.',
           bullets: [
             'GitHub 계정이 없다면 github.com 에서 무료로 만들 수 있습니다. 앱이 로그인을 요청할 때 만들어도 되고, 미리 만들어 두어도 됩니다.',
             '앱에 짧은 코드와 웹 주소가 나오면, 브라우저를 열고 그 주소로 들어가 코드를 입력한 뒤 승인합니다. 이렇게 하면 앱과 내 계정이 안전하게 연결됩니다.',
@@ -595,9 +627,9 @@ const messages = {
           summary:
             '앞으로는 저장해 둔 폴더를 간단한 웹사이트로 보여 주는 흐름을 다듬는 것이 목표입니다. 지금은 컴퓨터에서 편하게 쓰는 데 집중하고, “올리기” 단계는 앱 안 안내가 늘어나는 대로 따르면 됩니다.',
           body:
-            '“올리기”는 곧, 앱에서 최신 글을 저장한 뒤 내 온라인 프로젝트로 보내서 다른 사람이 웹 주소로 볼 수 있게 하는 것을 뜻합니다. 계정을 연결하기 전까지는 모든 내용이 내 PC 안에만 있습니다.',
+            '“올리기”는 곧, 앱에서 최신 글을 저장한 뒤 내 온라인 프로젝트로 보내서 다른 사람이 웹 주소로 볼 수 있게 하는 것을 뜻합니다. 계정을 연결하기 전까지는 모든 내용이 내 PC 안에만 있습니다. 게시·동기화 전에 Git이 설치되어 있어야 합니다(문서 → Git).',
           bullets: [
-            '앱의 체크리스트에서 계정 연결을 안내하면, 그때 GitHub 로그인을 마친 뒤 화면을 따라가면 됩니다.',
+            '앱의 체크리스트에서 계정 연결을 안내하면, GitHub 로그인과 Git 설치를 마친 뒤 화면을 따라가면 됩니다.',
             '내가 쓰는 버전에 “변경 보내기” 또는 “게시” 같은 버튼이 보이면 눌러 보고, 앱이 알려 주는 웹 주소를 열어 잘 보이는지 확인합니다.',
             '지금 읽고 있는 이 안내 사이트는 프로그램 설명용이고, 내가 만든 글과 사이트는 Emprint가 알려 주는 주소에 따로 생깁니다.'
           ]
