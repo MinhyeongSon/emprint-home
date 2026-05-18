@@ -13,15 +13,15 @@ const isPlaceholderRelease = releaseBaseUrl.includes('your-account')
 const downloads = [
   {
     id: 'macos-arm64',
-    filename: 'Emprint-0.2.1-arm64.dmg'
+    filename: 'Emprint-0.2.0-arm64.dmg'
   },
   {
     id: 'macos-x64',
-    filename: 'Emprint-0.2.1-x64.dmg'
+    filename: 'Emprint-0.2.0-x64.dmg'
   },
   {
     id: 'windows',
-    filename: 'Emprint-Setup-0.2.1-x64.exe'
+    filename: 'Emprint-Setup-0.2.0-x64.exe'
   }
 ].map((item) => ({
   ...item,
