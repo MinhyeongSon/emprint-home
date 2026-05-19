@@ -1,4 +1,4 @@
-const siteUrl = process.env.GATSBY_SITE_URL || 'https://your-account.github.io/emprint-home'
+const siteUrl = process.env.GATSBY_SITE_URL || 'https://devminson.github.io/emprint-home'
 
 module.exports = {
   siteMetadata: {

@@ -1,10 +1,10 @@
 /** Technical site config (URLs, versions, download filenames). All UI copy: `src/content/copy.js`. */
 const currentVersion = '0.2.9'
-const githubRepoUrl = process.env.GATSBY_EMPRINT_REPO_URL || 'https://github.com/MinhyeongSon/emprint'
+const githubRepoUrl = process.env.GATSBY_EMPRINT_REPO_URL || 'https://github.com/devminson/emprint'
 const releaseRepoUrl =
-  process.env.GATSBY_EMPRINT_RELEASE_REPO_URL || 'https://github.com/MinhyeongSon/emprint-release'
-const siteUrl = process.env.GATSBY_SITE_URL || 'https://minhyeongson.github.io/emprint-home'
-const kofiUrl = process.env.GATSBY_KOFI_URL || 'https://ko-fi.com/minhyeongson'
+  process.env.GATSBY_EMPRINT_RELEASE_REPO_URL || 'https://github.com/devminson/emprint-release'
+const siteUrl = process.env.GATSBY_SITE_URL || 'https://devminson.github.io/emprint-home'
+const kofiUrl = process.env.GATSBY_KOFI_URL || 'https://ko-fi.com/devminson'
 const releaseBaseUrl =
   process.env.GATSBY_EMPRINT_RELEASE_BASE_URL ||
   `${releaseRepoUrl}/releases/download/v${currentVersion}`

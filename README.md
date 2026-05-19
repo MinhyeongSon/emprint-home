@@ -14,10 +14,10 @@
 Update the repository and release URLs in [`src/data/site.js`](/Users/mhson/workspace/emprint-home/src/data/site.js) or provide them as environment variables:
 
 ```bash
-GATSBY_SITE_URL=https://minhyeongson.github.io/emprint-home
-GATSBY_EMPRINT_REPO_URL=https://github.com/MinhyeongSon/emprint
-GATSBY_EMPRINT_RELEASE_REPO_URL=https://github.com/MinhyeongSon/emprint-release
-GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/MinhyeongSon/emprint-release/releases/download/v0.2.9
+GATSBY_SITE_URL=https://devminson.github.io/emprint-home
+GATSBY_EMPRINT_REPO_URL=https://github.com/devminson/emprint
+GATSBY_EMPRINT_RELEASE_REPO_URL=https://github.com/devminson/emprint-release
+GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/devminson/emprint-release/releases/download/v0.2.9
 GATSBY_ENABLE_RELEASE_LINKS=true
 ```
 
