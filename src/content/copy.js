@@ -49,10 +49,25 @@ const messages = {
         description: 'Emprint page not found.'
       }
     },
+    install: {
+      sectionEyebrow: 'Install',
+      pageTitle: 'Install Emprint',
+      compactTitle: 'Install',
+      recommendLead:
+        'We recommend Homebrew (macOS) or Scoop (Windows) over downloading installers by hand. Package managers make installs and updates easier.',
+      macTitle: 'macOS (Homebrew)',
+      macPrereq: 'Requires Homebrew — https://brew.sh',
+      windowsTitle: 'Windows (Scoop)',
+      windowsPrereq: 'Requires Scoop — https://scoop.sh',
+      directTitle: 'Direct download (if you cannot use Homebrew or Scoop)',
+      directLead:
+        'Use the table below only when package managers are not an option. Prefer the commands above when you can.',
+      documentLink: 'Full install guide — direct download & macOS security'
+    },
     downloads: {
       sectionEyebrow: 'Downloads',
-      pageTitle: 'Installers',
-      compactTitle: 'Installer matrix',
+      pageTitle: 'Direct download',
+      compactTitle: 'Direct download',
       downloadCta: 'Download',
       releasePending: 'Release URL pending',
       placeholderNotice:
@@ -207,7 +222,7 @@ const messages = {
         title: 'If you want to keep the path you have walked',
         body:
           'Install when you are ready; open the docs whenever you need a guide. When everything feels in place, start leaving your traces.',
-        primaryCta: 'Install Emprint',
+        primaryCta: 'Install with Homebrew or Scoop',
         secondaryCta: 'Open document',
         tertiaryCta: 'View source'
       }
@@ -222,24 +237,24 @@ const messages = {
       navOverview: 'Getting started',
       navNotes: 'Notes',
       notesEyebrow: 'Notes',
-      notesTitle: 'About the install buttons here',
+      notesTitle: 'About installs and downloads',
       notesBody:
-        'The download buttons on this help page open the official Emprint app download area. This help site and the app may use different web addresses; if something looks out of date, check the Emprint home page for the latest installer.',
+        'Preferred installs use Homebrew or Scoop (see Install). Direct download links point to the emprint-release repository on GitHub. If a link looks out of date, check the home page or release repo for the latest version.',
       sections: [
         {
           id: 'install',
           navLabel: 'Install',
           title: 'Install the app',
           summary:
-            'Emprint 0.2.7 supports recent Mac computers (Apple or Intel chip) and 64-bit Windows. Pick the installer that matches your machine.',
+            'Emprint 0.2.8 supports recent Mac computers (Apple or Intel chip) and 64-bit Windows. Install with Homebrew or Scoop when you can.',
           body:
-            'You can download and install without creating any online account first. You will only need a free GitHub account later, when you want to back your work up online or publish a simple website. On Mac, Emprint is distributed as open source without a paid Apple developer certificate, so the system may warn you the first time you open it—see the steps below.',
+            'You can install without creating an online account first. You will only need a free GitHub account later when you back up or publish. Use the command blocks below (recommended); direct installers are listed at the bottom only if you need them.',
           bullets: [
-            'In the table below, choose Mac (Apple chip), Mac (Intel), or Windows, then tap Download.',
-            'Mac: open the downloaded file and drag Emprint into Applications. Windows: run the installer and follow the on-screen steps.',
-            'Mac first launch: if macOS says the app cannot be opened because the developer cannot be verified, right-click (or Control-click) the Emprint app in Applications and choose Open, then confirm Open in the dialog. This is a one-time extra step for unsigned open-source apps.',
-            'If it still will not start: open System Settings → Privacy & Security, scroll down, and click Open Anyway next to the Emprint message (wording may vary slightly by macOS version).',
-            'If Emprint says a small helper program is missing, use the link inside the app to add it—usually a one-time setup.'
+            'macOS: run the Homebrew commands in Terminal. Windows: run the Scoop commands in PowerShell.',
+            'After installing, open Emprint from Applications (Mac) or the Start menu (Windows).',
+            'Direct download only: Mac—open the .dmg and drag Emprint to Applications; Windows—run the .exe installer.',
+            'Direct download on Mac: if macOS says the developer cannot be verified, right-click Emprint in Applications → Open, then confirm. Or use System Settings → Privacy & Security → Open Anyway.',
+            'If Emprint says a small helper program is missing, use the link inside the app—usually a one-time setup.'
           ]
         },
         {
@@ -362,10 +377,25 @@ const messages = {
         description: '요청하신 Emprint 페이지를 찾을 수 없습니다.'
       }
     },
+    install: {
+      sectionEyebrow: '설치',
+      pageTitle: 'Emprint 설치',
+      compactTitle: '설치',
+      recommendLead:
+        '설치 파일을 직접 받기보다 Homebrew(맥) 또는 Scoop(Windows) 사용을 권장합니다. 패키지 관리자가 설치·업데이트를 더 쉽게 해 줍니다.',
+      macTitle: 'macOS (Homebrew)',
+      macPrereq: 'Homebrew 필요 — https://brew.sh',
+      windowsTitle: 'Windows (Scoop)',
+      windowsPrereq: 'Scoop 필요 — https://scoop.sh',
+      directTitle: '직접 다운로드 (Homebrew·Scoop을 쓸 수 없을 때)',
+      directLead:
+        '패키지 관리자를 쓸 수 없을 때만 아래 표를 사용하세요. 가능하면 위 명령을 우선해 주세요.',
+      documentLink: '설치 가이드 전체 보기 — 직접 다운로드·맥 보안 안내'
+    },
     downloads: {
-      sectionEyebrow: 'DOWNLOADS',
-      pageTitle: 'Installers',
-      compactTitle: '설치 파일 구성',
+      sectionEyebrow: '다운로드',
+      pageTitle: '직접 다운로드',
+      compactTitle: '직접 다운로드',
       downloadCta: '다운로드',
       releasePending: '릴리스 URL 대기',
       placeholderNotice:
@@ -526,7 +556,7 @@ const messages = {
         title: '당신이 걸어온 흔적을 남기고 싶다면',
         body:
           '준비되면 설치하고, 가이드가 필요하면 문서로 이동하세요. 모든 준비가 끝났다면, 지금부터 당신의 흔적을 남겨보세요.',
-        primaryCta: 'Emprint 설치',
+        primaryCta: 'Homebrew·Scoop으로 설치',
         secondaryCta: '문서 열기',
         tertiaryCta: '소스 보기'
       }
@@ -541,24 +571,24 @@ const messages = {
       navOverview: '시작하기',
       navNotes: '노트',
       notesEyebrow: '노트',
-      notesTitle: '이 페이지의 설치 버튼에 대해',
+      notesTitle: '설치·다운로드 안내',
       notesBody:
-        '이 문서에 있는 다운로드 버튼은 Emprint 앱 공식 다운로드 페이지로 연결됩니다. 안내용 웹사이트와 앱이 서로 다른 주소를 쓸 수 있으니, 링크가 맞지 않으면 Emprint 홈에서 최신 설치 파일을 확인해 주세요.',
+        '권장 설치는 Homebrew 또는 Scoop입니다(설치 섹션 참고). 직접 다운로드 링크는 GitHub emprint-release 저장소로 연결됩니다. 링크가 맞지 않으면 홈 또는 릴리스 저장소에서 최신 버전을 확인해 주세요.',
       sections: [
         {
           id: 'install',
           navLabel: '설치',
           title: '앱 설치하기',
           summary:
-            'Emprint 0.2.7은 최근 맥(M1 등 Apple 칩 또는 Intel)과 64비트 Windows에서 실행됩니다. 사용 중인 기기에 맞는 설치 파일을 고르세요.',
+            'Emprint 0.2.8은 최근 맥(M1 등 Apple 칩 또는 Intel)과 64비트 Windows에서 실행됩니다. 가능하면 Homebrew·Scoop으로 설치하세요.',
           body:
-            '온라인 계정 없이도 먼저 다운 받아 설치할 수 있습니다. 나중에 글을 인터넷에 올리거나 백업하려 할 때 무료 GitHub 계정이 필요하다는 안내가 나올 수 있습니다. 맥은 오픈소스로 배포되어 유료 Apple 개발자 인증서가 없어, 처음 실행할 때 보안 경고가 나올 수 있습니다—아래 방법으로 열어 주세요.',
+            '온라인 계정 없이도 설치할 수 있습니다. 나중에 백업·게시할 때 무료 GitHub 계정이 필요할 수 있습니다. 아래 명령 블록(권장)을 사용하고, 직접 설치 파일은 맨 아래에만 있습니다.',
           bullets: [
-            '아래 표에서 맥(Apple 칩), 맥(Intel), Windows 중 하나를 고른 뒤 [다운로드]를 누릅니다.',
-            '맥: 받은 파일을 열고 Emprint를 응용 프로그램 폴더로 끌어 넣습니다. Windows: 설치 프로그램을 실행하고 화면 안내를 따릅니다.',
-            '맥 첫 실행: “개발자를 확인할 수 없어 열 수 없습니다” 같은 메시지가 나오면, 응용 프로그램 폴더에서 Emprint를 우클릭(또는 Control+클릭)한 뒤 [열기]를 고르고, 다시 뜨는 창에서 [열기]를 누릅니다. 서명되지 않은 오픈소스 앱은 보통 이 한 번만 더 필요합니다.',
-            '그래도 안 열리면: 시스템 설정 → 개인정보 보호 및 보안으로 가서 아래쪽의 Emprint 관련 안내 옆 [그래도 열기]를 누릅니다(macOS 버전에 따라 문구가 조금 다를 수 있습니다).',
-            '앱에서 “추가로 필요한 작은 프로그램이 있다”고 하면, 앱 안에 있는 안내 링크를 눌러 한 번만 설치하면 됩니다.'
+            '맥: 터미널에서 Homebrew 명령을 실행합니다. Windows: PowerShell에서 Scoop 명령을 실행합니다.',
+            '설치 후 맥은 응용 프로그램, Windows는 시작 메뉴에서 Emprint를 실행합니다.',
+            '직접 다운로드만 쓸 때: 맥—.dmg를 열어 응용 프로그램으로 끌어 넣기, Windows—.exe 설치 프로그램 실행.',
+            '직접 다운로드·맥: “개발자를 확인할 수 없음”이 나오면 응용 프로그램에서 Emprint 우클릭 → [열기], 또는 시스템 설정 → 개인정보 보호 및 보안 → [그래도 열기].',
+            '앱에서 추가 프로그램이 필요하다고 하면 앱 안 안내 링크를 따라 한 번만 설치하면 됩니다.'
           ]
         },
         {

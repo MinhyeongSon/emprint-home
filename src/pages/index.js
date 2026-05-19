@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, withPrefix } from 'gatsby'
 import { hrefWithPrefix } from '../utils/href-with-prefix'
-import DownloadGrid from '../components/download-grid'
+import InstallGuide from '../components/install-guide'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import siteData from '../data/site'
@@ -29,7 +29,7 @@ export default function IndexPage({ location }) {
               {L.hero.ribbon}
             </p>
             <div className="button-row button-row--tight">
-              <a className="button" href="#downloads">
+              <a className="button" href="#install">
                 {L.closing.primaryCta}
               </a>
               <Link className="button button--secondary" to="/document/">
@@ -154,14 +154,14 @@ export default function IndexPage({ location }) {
 
         <div className="section-rule" aria-hidden="true" />
 
-        <DownloadGrid />
+        <InstallGuide />
 
         <section className="editorial-section editorial-section--center closing-band">
           <span className="section-heading__eyebrow">{L.closing.eyebrow}</span>
           <h2 className="editorial-section__title editorial-section__title--tight">{L.closing.title}</h2>
           <p className="editorial-section__intro closing-band__body">{L.closing.body}</p>
           <div className="button-row button-row--tight closing-band__actions">
-            <a className="button" href="#downloads">
+            <a className="button" href="#install">
               {L.closing.primaryCta}
             </a>
             <Link className="button button--secondary" to="/document/">

@@ -5,7 +5,7 @@
   "description": "GitHub Pages landing site for Emprint.",
   "packageManager": "npm@11.12.1",
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean"

@@ -2,7 +2,7 @@ import * as React from 'react'
 import siteData from '../data/site'
 import { useLocale } from '../context/locale-context'
 
-export default function DownloadGrid({ compact = false }) {
+export default function DownloadGrid({ compact = false, embedded = false }) {
   const { messages } = useLocale()
   const d = messages.downloads
 
@@ -18,11 +18,16 @@ export default function DownloadGrid({ compact = false }) {
   const title = compact ? d.compactTitle : d.pageTitle
 
   return (
-    <section className={`release-panel ${compact ? 'release-panel--compact' : ''}`} id="downloads">
-      <div className="section-heading">
-        <span className="section-heading__eyebrow">{d.sectionEyebrow}</span>
-        <h2>{title}</h2>
-      </div>
+    <section
+      className={`release-panel ${compact ? 'release-panel--compact' : ''} ${embedded ? 'release-panel--embedded' : ''}`}
+      id={embedded ? undefined : 'downloads'}
+    >
+      {!embedded ? (
+        <div className="section-heading">
+          <span className="section-heading__eyebrow">{d.sectionEyebrow}</span>
+          <h2>{title}</h2>
+        </div>
+      ) : null}
       <div className="download-grid">
         {rows.map((item) => (
           <article className="download-card" key={item.filename}>

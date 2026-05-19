@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import DownloadGrid from '../components/download-grid'
+import InstallGuide from '../components/install-guide'
 import Seo from '../components/seo'
 import { useLocale } from '../context/locale-context'
 import { DEFAULT_LOCALE, getMessages } from '../content/copy'
@@ -34,21 +34,39 @@ export default function DocumentPage({ location }) {
             <span className="section-heading__eyebrow">{doc.eyebrow}</span>
             <h1>{doc.title}</h1>
             <p>{doc.intro}</p>
-            <DownloadGrid compact />
           </header>
 
-          {doc.sections.map((section) => (
-            <article key={section.id} id={section.id} className="docs-section panel">
-              <h2>{section.title}</h2>
-              <p className="docs-section__lead">{section.summary}</p>
-              <p className="docs-section__body">{section.body}</p>
-              <ul className="document-list">
-                {section.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+          {doc.sections.map((section) =>
+            section.id === 'install' ? (
+              <article key={section.id} id={section.id} className="docs-section panel">
+                <h2>{section.title}</h2>
+                <p className="docs-section__lead">{section.summary}</p>
+                <p className="docs-section__body">{section.body}</p>
+                <InstallGuide
+                  showHeader={false}
+                  showLead={false}
+                  showDirectDownloads
+                  sectionId=""
+                />
+                <ul className="document-list">
+                  {section.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </article>
+            ) : (
+              <article key={section.id} id={section.id} className="docs-section panel">
+                <h2>{section.title}</h2>
+                <p className="docs-section__lead">{section.summary}</p>
+                <p className="docs-section__body">{section.body}</p>
+                <ul className="document-list">
+                  {section.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </article>
+            )
+          )}
 
           <footer id="notes" className="docs-section docs-section--notes panel">
             <span className="section-heading__eyebrow">{doc.notesEyebrow}</span>

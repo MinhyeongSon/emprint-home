@@ -747,6 +747,88 @@ pre {
   margin-top: 1.5rem;
 }
 
+.release-panel--embedded {
+  margin-top: 1rem;
+}
+
+.release-panel--embedded .download-grid {
+  margin-top: 0.75rem;
+}
+
+.install-panel__lead,
+.install-panel__note,
+.install-panel__direct-lead,
+.install-panel__more {
+  margin: 0;
+  color: rgba(245, 235, 224, 0.78);
+  line-height: 1.7;
+}
+
+.install-panel__lead {
+  margin-top: 0.25rem;
+  max-width: 42rem;
+}
+
+.install-blocks {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.install-block__title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.install-code {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border: 1px solid rgba(245, 235, 224, 0.1);
+  border-radius: var(--radius-lg);
+  background: rgba(12, 10, 8, 0.55);
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: rgba(245, 235, 224, 0.92);
+  white-space: pre;
+}
+
+.install-code code {
+  font-family: inherit;
+}
+
+.install-panel__note {
+  margin-top: -0.5rem;
+  font-size: 0.9rem;
+}
+
+.install-panel__direct {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(245, 235, 224, 0.08);
+}
+
+.install-panel__direct-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.install-panel__more {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.install-panel__more a {
+  color: rgb(var(--accent));
+}
+
+.docs-section .install-panel__content {
+  margin-top: 0.5rem;
+}
+
 .download-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 1.2rem;
