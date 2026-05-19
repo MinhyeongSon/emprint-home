@@ -252,7 +252,7 @@ const messages = {
           navLabel: 'Install',
           title: 'Install the app',
           summary:
-            'Emprint 0.2.9 supports recent Mac computers (Apple or Intel chip) and 64-bit Windows. Install with Homebrew or Scoop when you can.',
+            'Emprint 0.2.10 supports recent Mac computers (Apple or Intel chip) and 64-bit Windows. Install with Homebrew or Scoop when you can.',
           body:
             'You can install without creating an online account first. You will only need a free GitHub account later when you back up or publish. Use the command blocks below (recommended); direct installers are listed at the bottom only if you need them. On Mac, direct downloads are .pkg installers with a post-install step that helps with Gatekeeper on unsigned open-source builds.',
           bullets: [
@@ -593,7 +593,7 @@ const messages = {
           navLabel: '설치',
           title: '앱 설치하기',
           summary:
-            'Emprint 0.2.9은 최근 맥(M1 등 Apple 칩 또는 Intel)과 64비트 Windows에서 실행됩니다. 가능하면 Homebrew·Scoop으로 설치하세요.',
+            'Emprint 0.2.10은 최근 맥(M1 등 Apple 칩 또는 Intel)과 64비트 Windows에서 실행됩니다. 가능하면 Homebrew·Scoop으로 설치하세요.',
           body:
             '온라인 계정 없이도 설치할 수 있습니다. 나중에 백업·게시할 때 무료 GitHub 계정이 필요할 수 있습니다. 아래 명령 블록(권장)을 사용하고, 직접 설치 파일은 맨 아래에만 있습니다. 맥 직접 다운로드는 Gatekeeper 보조용 post-install이 포함된 .pkg 설치 프로그램입니다.',
           bullets: [

@@ -1,5 +1,5 @@
 /** Technical site config (URLs, versions, download filenames). All UI copy: `src/content/copy.js`. */
-const currentVersion = '0.2.9'
+const currentVersion = '0.2.10'
 const githubRepoUrl = process.env.GATSBY_EMPRINT_REPO_URL || 'https://github.com/devminson/emprint'
 const releaseRepoUrl =
   process.env.GATSBY_EMPRINT_RELEASE_REPO_URL || 'https://github.com/devminson/emprint-release'
@@ -17,15 +17,15 @@ const isPlaceholderRelease = releaseBaseUrl.includes('your-account')
 const downloads = [
   {
     id: 'macos-arm64',
-    filename: 'Emprint-0.2.9-arm64.pkg'
+    filename: 'Emprint-0.2.10-arm64.pkg'
   },
   {
     id: 'macos-x64',
-    filename: 'Emprint-0.2.9-x64.pkg'
+    filename: 'Emprint-0.2.10-x64.pkg'
   },
   {
     id: 'windows',
-    filename: 'Emprint-Setup-0.2.9-x64.exe'
+    filename: 'Emprint-Setup-0.2.10-x64.exe'
   }
 ].map((item) => ({
   ...item,

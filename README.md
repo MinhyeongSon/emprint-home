@@ -17,7 +17,7 @@ Update the repository and release URLs in [`src/data/site.js`](/Users/mhson/work
 GATSBY_SITE_URL=https://devminson.github.io/emprint-home
 GATSBY_EMPRINT_REPO_URL=https://github.com/devminson/emprint
 GATSBY_EMPRINT_RELEASE_REPO_URL=https://github.com/devminson/emprint-release
-GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/devminson/emprint-release/releases/download/v0.2.9
+GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/devminson/emprint-release/releases/download/v0.2.10
 GATSBY_ENABLE_RELEASE_LINKS=true
 ```
 
