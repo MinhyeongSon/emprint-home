@@ -231,7 +231,7 @@ const messages = {
           navLabel: 'Install',
           title: 'Install the app',
           summary:
-            'Emprint 0.2.6 supports recent Mac computers (Apple or Intel chip) and 64-bit Windows. Pick the installer that matches your machine.',
+            'Emprint 0.2.7 supports recent Mac computers (Apple or Intel chip) and 64-bit Windows. Pick the installer that matches your machine.',
           body:
             'You can download and install without creating any online account first. You will only need a free GitHub account later, when you want to back your work up online or publish a simple website. On Mac, Emprint is distributed as open source without a paid Apple developer certificate, so the system may warn you the first time you open it—see the steps below.',
           bullets: [
@@ -550,7 +550,7 @@ const messages = {
           navLabel: '설치',
           title: '앱 설치하기',
           summary:
-            'Emprint 0.2.6은 최근 맥(M1 등 Apple 칩 또는 Intel)과 64비트 Windows에서 실행됩니다. 사용 중인 기기에 맞는 설치 파일을 고르세요.',
+            'Emprint 0.2.7은 최근 맥(M1 등 Apple 칩 또는 Intel)과 64비트 Windows에서 실행됩니다. 사용 중인 기기에 맞는 설치 파일을 고르세요.',
           body:
             '온라인 계정 없이도 먼저 다운 받아 설치할 수 있습니다. 나중에 글을 인터넷에 올리거나 백업하려 할 때 무료 GitHub 계정이 필요하다는 안내가 나올 수 있습니다. 맥은 오픈소스로 배포되어 유료 Apple 개발자 인증서가 없어, 처음 실행할 때 보안 경고가 나올 수 있습니다—아래 방법으로 열어 주세요.',
           bullets: [
