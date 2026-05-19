@@ -16,11 +16,13 @@ Update the repository and release URLs in [`src/data/site.js`](/Users/mhson/work
 ```bash
 GATSBY_SITE_URL=https://minhyeongson.github.io/emprint-home
 GATSBY_EMPRINT_REPO_URL=https://github.com/MinhyeongSon/emprint
-GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/MinhyeongSon/emprint/releases/download/v0.2.3
+GATSBY_EMPRINT_RELEASE_REPO_URL=https://github.com/MinhyeongSon/emprint-release
+GATSBY_EMPRINT_RELEASE_BASE_URL=https://github.com/MinhyeongSon/emprint-release/releases/download/v0.2.5
 GATSBY_ENABLE_RELEASE_LINKS=true
 ```
 
-If `GATSBY_EMPRINT_RELEASE_BASE_URL` is omitted, it falls back to `<repo>/releases/download/v<currentVersion>` (see `src/data/site.js`).
+- `GATSBY_EMPRINT_REPO_URL` — source code (footer / GitHub links).
+- `GATSBY_EMPRINT_RELEASE_REPO_URL` — installer releases (`emprint-release`). If `GATSBY_EMPRINT_RELEASE_BASE_URL` is omitted, downloads use `<release-repo>/releases/download/v<currentVersion>` (see `src/data/site.js`).
 Release download buttons stay disabled until `GATSBY_ENABLE_RELEASE_LINKS=true` is set.
 
 ## Local development
