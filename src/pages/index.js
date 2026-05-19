@@ -57,7 +57,11 @@ export default function IndexPage({ location }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {L.hero.supportCta}
+                <span className="hero-mark hero-mark--btn" aria-hidden="true">
+                  <span className="hero-mark__prompt">&gt;</span>
+                  <span className="hero-mark__cursor">_</span>
+                </span>
+                <span className="hero__support-btn-label">{L.hero.supportCta}</span>
               </a>
               <p className="hero__support-hint">{L.hero.supportHint}</p>
             </div>

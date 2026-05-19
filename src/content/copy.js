@@ -28,7 +28,7 @@ const messages = {
       footerCopy: 'Just show you. Don\'t submit your result.',
       footerDocument: 'Document',
       footerRepo: 'GitHub',
-      footerSupport: 'Support on Ko-fi',
+      footerSupport: 'Emprint through support',
       localeSwitcherLabel: 'Language',
       localeEn: 'English',
       localeKo: 'Korean'
@@ -95,7 +95,7 @@ const messages = {
         lede:
           'Emprint treats each piece as a trace and each revision as a mark on a timeline, so what you leave behind is not only what you shipped but how you changed along the way.',
         ribbon: 'Personal archive · Publish · Anthologies',
-        supportCta: 'Support on Ko-fi',
+        supportCta: 'Emprint through support',
         supportHint: 'Open-source Emprint stays free to install—your tip helps keep releases signed and development sustainable.',
         panelLeft: 'support',
         panelRight: 'where it goes',
@@ -362,7 +362,7 @@ const messages = {
         'Just show you. Don\'t submit your result.',
       footerDocument: '문서',
       footerRepo: 'GitHub',
-      footerSupport: 'Ko-fi로 후원',
+      footerSupport: '후원으로 Emprint 하기',
       localeSwitcherLabel: '언어',
       localeEn: 'English',
       localeKo: '한국어'
@@ -429,7 +429,7 @@ const messages = {
         lede:
           'Emprint는 글 한 편을 하나의 흔적으로, 수정은 시간축 위의 기록으로 남겨 무엇을 냈는지뿐 아니라 어떻게 변해 왔는지도 드러낼 수 있게 합니다.',
         ribbon: 'Personal archive · Publish · anthologies',
-        supportCta: 'Ko-fi로 후원하기',
+        supportCta: '후원으로 Emprint 하기',
         supportHint:
           'Emprint는 오픈소스로 무료 설치입니다. 후원은 배포용 서명과 개발·릴리스 환경을 이어가는 데 쓰입니다.',
         panelLeft: '후원',
