@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link, withPrefix } from 'gatsby'
+import { Link } from 'gatsby'
 import { hrefWithPrefix } from '../utils/href-with-prefix'
 import InstallGuide from '../components/install-guide'
 import Layout from '../components/layout'
@@ -9,7 +9,6 @@ import { useLocale } from '../context/locale-context'
 import { DEFAULT_LOCALE, getMessages } from '../content/copy'
 
 export default function IndexPage({ location }) {
-  const logoSrc = withPrefix('/assets/images/emprint-logo.svg')
   const { messages } = useLocale()
   const L = messages.landing
 
@@ -51,14 +50,23 @@ export default function IndexPage({ location }) {
           </div>
 
           <div className="hero__panel panel">
-            <img className="hero__logo" src={logoSrc} alt={L.hero.logoAlt} />
-            <p className="hero__quote">{L.hero.quote}</p>
-            <div className="console-card">
+            <div className="hero__support">
+              <a
+                className="button hero__support-btn"
+                href={siteData.kofiUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {L.hero.supportCta}
+              </a>
+              <p className="hero__support-hint">{L.hero.supportHint}</p>
+            </div>
+            <div className="console-card console-card--support">
               <div className="console-card__header">
                 <span>{L.hero.panelLeft}</span>
                 <span>{L.hero.panelRight}</span>
               </div>
-              <pre>{siteData.directoryTree.join('\n')}</pre>
+              <pre>{L.hero.supportLines.join('\n')}</pre>
             </div>
           </div>
         </section>

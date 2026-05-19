@@ -4,6 +4,7 @@ const githubRepoUrl = process.env.GATSBY_EMPRINT_REPO_URL || 'https://github.com
 const releaseRepoUrl =
   process.env.GATSBY_EMPRINT_RELEASE_REPO_URL || 'https://github.com/MinhyeongSon/emprint-release'
 const siteUrl = process.env.GATSBY_SITE_URL || 'https://minhyeongson.github.io/emprint-home'
+const kofiUrl = process.env.GATSBY_KOFI_URL || 'https://ko-fi.com/minhyeongson'
 const releaseBaseUrl =
   process.env.GATSBY_EMPRINT_RELEASE_BASE_URL ||
   `${releaseRepoUrl}/releases/download/v${currentVersion}`
@@ -39,6 +40,7 @@ export default {
   githubRepoUrl,
   releaseRepoUrl,
   siteUrl,
+  kofiUrl,
   releaseBaseUrl,
   isPlaceholderRepo,
   isPlaceholderSiteUrl,

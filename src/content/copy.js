@@ -28,6 +28,7 @@ const messages = {
       footerCopy: 'Just show you. Don\'t submit your result.',
       footerDocument: 'Document',
       footerRepo: 'GitHub',
+      footerSupport: 'Support on Ko-fi',
       localeSwitcherLabel: 'Language',
       localeEn: 'English',
       localeKo: 'Korean'
@@ -94,10 +95,15 @@ const messages = {
         lede:
           'Emprint treats each piece as a trace and each revision as a mark on a timeline, so what you leave behind is not only what you shipped but how you changed along the way.',
         ribbon: 'Personal archive · Publish · Anthologies',
-        quote: '“I keep the whole path—not only the finished piece.”',
-        logoAlt: 'Emprint wordmark',
-        panelLeft: 'workspace',
-        panelRight: 'portable by design',
+        supportCta: 'Support on Ko-fi',
+        supportHint: 'Open-source Emprint stays free to install—your tip helps keep releases signed and development sustainable.',
+        panelLeft: 'support',
+        panelRight: 'where it goes',
+        supportLines: [
+          '* signing — Apple notarization & trusted macOS installs',
+          '* environment — dev hardware and release tooling',
+          '* sustain — ongoing fixes without paywalling the app'
+        ],
         releaseLabel: 'release reference'
       },
       why: {
@@ -356,6 +362,7 @@ const messages = {
         'Just show you. Don\'t submit your result.',
       footerDocument: '문서',
       footerRepo: 'GitHub',
+      footerSupport: 'Ko-fi로 후원',
       localeSwitcherLabel: '언어',
       localeEn: 'English',
       localeKo: '한국어'
@@ -422,10 +429,16 @@ const messages = {
         lede:
           'Emprint는 글 한 편을 하나의 흔적으로, 수정은 시간축 위의 기록으로 남겨 무엇을 냈는지뿐 아니라 어떻게 변해 왔는지도 드러낼 수 있게 합니다.',
         ribbon: 'Personal archive · Publish · anthologies',
-        quote: '“결과물만이 아닌 지나온 모든 것을 남깁니다.”',
-        logoAlt: 'Emprint 로고타입',
-        panelLeft: 'workspace',
-        panelRight: 'portable by design',
+        supportCta: 'Ko-fi로 후원하기',
+        supportHint:
+          'Emprint는 오픈소스로 무료 설치입니다. 후원은 배포용 서명과 개발·릴리스 환경을 이어가는 데 쓰입니다.',
+        panelLeft: '후원',
+        panelRight: '사용처',
+        supportLines: [
+          '* 서명 — macOS 공증·신뢰할 수 있는 배포',
+          '* 환경 — 개발 장비와 릴리스·빌드 도구',
+          '* 지속 — 유료 잠금 없이 업데이트 유지'
+        ],
         releaseLabel: 'release reference'
       },
       why: {

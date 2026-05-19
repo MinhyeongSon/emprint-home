@@ -96,6 +96,14 @@ export default function Layout({ children, currentPath = '/' }) {
             <p className="site-footer__copy">{c.footerCopy}</p>
           </div>
           <div className="site-footer__links">
+            <a
+              className="button button--secondary site-footer__support-btn"
+              href={siteData.kofiUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {c.footerSupport}
+            </a>
             <Link to="/document/">{c.footerDocument}</Link>
             <a href={siteData.githubRepoUrl} target="_blank" rel="noreferrer">
               {c.footerRepo}
