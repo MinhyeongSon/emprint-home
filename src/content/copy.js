@@ -75,11 +75,11 @@ const messages = {
       platforms: {
         'macos-arm64': {
           label: 'macOS Apple Silicon',
-          detail: 'M1, M2, M3, M4'
+          detail: '.pkg installer · M1–M4'
         },
         'macos-x64': {
           label: 'macOS Intel',
-          detail: 'Intel x64'
+          detail: '.pkg installer · Intel x64'
         },
         windows: {
           label: 'Windows',
@@ -246,14 +246,14 @@ const messages = {
           navLabel: 'Install',
           title: 'Install the app',
           summary:
-            'Emprint 0.2.8 supports recent Mac computers (Apple or Intel chip) and 64-bit Windows. Install with Homebrew or Scoop when you can.',
+            'Emprint 0.2.9 supports recent Mac computers (Apple or Intel chip) and 64-bit Windows. Install with Homebrew or Scoop when you can.',
           body:
-            'You can install without creating an online account first. You will only need a free GitHub account later when you back up or publish. Use the command blocks below (recommended); direct installers are listed at the bottom only if you need them.',
+            'You can install without creating an online account first. You will only need a free GitHub account later when you back up or publish. Use the command blocks below (recommended); direct installers are listed at the bottom only if you need them. On Mac, direct downloads are .pkg installers with a post-install step that helps with Gatekeeper on unsigned open-source builds.',
           bullets: [
             'macOS: run the Homebrew commands in Terminal. Windows: run the Scoop commands in PowerShell.',
             'After installing, open Emprint from Applications (Mac) or the Start menu (Windows).',
-            'Direct download only: Mac—open the .dmg and drag Emprint to Applications; Windows—run the .exe installer.',
-            'Direct download on Mac: if macOS says the developer cannot be verified, right-click Emprint in Applications → Open, then confirm. Or use System Settings → Privacy & Security → Open Anyway.',
+            'Direct download only: Mac—open the .pkg for your chip (Apple or Intel) and follow the installer; Windows—run the .exe installer.',
+            'Direct download on Mac: the .pkg runs a post-install script to ease Gatekeeper. If the app still will not open, right-click Emprint in Applications → Open, or use System Settings → Privacy & Security → Open Anyway.',
             'If Emprint says a small helper program is missing, use the link inside the app—usually a one-time setup.'
           ]
         },
@@ -403,11 +403,11 @@ const messages = {
       platforms: {
         'macos-arm64': {
           label: 'macOS Apple Silicon',
-          detail: 'M1, M2, M3, M4'
+          detail: '.pkg installer · M1–M4'
         },
         'macos-x64': {
           label: 'macOS Intel',
-          detail: 'Intel x64'
+          detail: '.pkg installer · Intel x64'
         },
         windows: {
           label: 'Windows',
@@ -580,14 +580,14 @@ const messages = {
           navLabel: '설치',
           title: '앱 설치하기',
           summary:
-            'Emprint 0.2.8은 최근 맥(M1 등 Apple 칩 또는 Intel)과 64비트 Windows에서 실행됩니다. 가능하면 Homebrew·Scoop으로 설치하세요.',
+            'Emprint 0.2.9은 최근 맥(M1 등 Apple 칩 또는 Intel)과 64비트 Windows에서 실행됩니다. 가능하면 Homebrew·Scoop으로 설치하세요.',
           body:
-            '온라인 계정 없이도 설치할 수 있습니다. 나중에 백업·게시할 때 무료 GitHub 계정이 필요할 수 있습니다. 아래 명령 블록(권장)을 사용하고, 직접 설치 파일은 맨 아래에만 있습니다.',
+            '온라인 계정 없이도 설치할 수 있습니다. 나중에 백업·게시할 때 무료 GitHub 계정이 필요할 수 있습니다. 아래 명령 블록(권장)을 사용하고, 직접 설치 파일은 맨 아래에만 있습니다. 맥 직접 다운로드는 Gatekeeper 보조용 post-install이 포함된 .pkg 설치 프로그램입니다.',
           bullets: [
             '맥: 터미널에서 Homebrew 명령을 실행합니다. Windows: PowerShell에서 Scoop 명령을 실행합니다.',
             '설치 후 맥은 응용 프로그램, Windows는 시작 메뉴에서 Emprint를 실행합니다.',
-            '직접 다운로드만 쓸 때: 맥—.dmg를 열어 응용 프로그램으로 끌어 넣기, Windows—.exe 설치 프로그램 실행.',
-            '직접 다운로드·맥: “개발자를 확인할 수 없음”이 나오면 응용 프로그램에서 Emprint 우클릭 → [열기], 또는 시스템 설정 → 개인정보 보호 및 보안 → [그래도 열기].',
+            '직접 다운로드만 쓸 때: 맥—칩에 맞는 .pkg를 열고 설치 안내를 따릅니다. Windows—.exe 설치 프로그램 실행.',
+            '직접 다운로드·맥: .pkg 설치 후 post-install 스크립트가 Gatekeeper를 돕습니다. 그래도 열리지 않으면 응용 프로그램에서 Emprint 우클릭 → [열기], 또는 시스템 설정 → 개인정보 보호 및 보안 → [그래도 열기].',
             '앱에서 추가 프로그램이 필요하다고 하면 앱 안 안내 링크를 따라 한 번만 설치하면 됩니다.'
           ]
         },
