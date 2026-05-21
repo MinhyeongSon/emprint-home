@@ -1,9 +1,28 @@
 import * as React from 'react'
 import Layout from '../components/layout'
+import DocWorkflow from '../components/doc-workflow'
 import InstallGuide from '../components/install-guide'
 import Seo from '../components/seo'
 import { useLocale } from '../context/locale-context'
 import { DEFAULT_LOCALE, getMessages } from '../content/copy'
+
+function DocumentSection({ section }) {
+  return (
+    <article id={section.id} className="docs-section panel">
+      <h2>{section.title}</h2>
+      <p className="docs-section__lead">{section.summary}</p>
+      <p className="docs-section__body">{section.body}</p>
+      {section.steps?.length ? <DocWorkflow steps={section.steps} /> : null}
+      {section.bullets?.length ? (
+        <ul className="document-list">
+          {section.bullets.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
+      ) : null}
+    </article>
+  )
+}
 
 export default function DocumentPage({ location }) {
   const { messages } = useLocale()
@@ -48,23 +67,16 @@ export default function DocumentPage({ location }) {
                   showDirectDownloads
                   sectionId=""
                 />
-                <ul className="document-list">
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
+                {section.bullets?.length ? (
+                  <ul className="document-list">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </article>
             ) : (
-              <article key={section.id} id={section.id} className="docs-section panel">
-                <h2>{section.title}</h2>
-                <p className="docs-section__lead">{section.summary}</p>
-                <p className="docs-section__body">{section.body}</p>
-                <ul className="document-list">
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </article>
+              <DocumentSection key={section.id} section={section} />
             )
           )}
 
